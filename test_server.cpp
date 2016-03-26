@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
         ic = Ice::initialize(argc, argv);
         Ice::ObjectAdapterPtr adapter =
             ic->createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -p 10000");
-        Ice::ObjectPtr object = new SyncI;
+        Ice::ObjectPtr object = new inexor::tree::SyncI;
         adapter->add(object, ic->stringToIdentity("SimplePrinter"));
         adapter->activate();
         ic->waitForShutdown();

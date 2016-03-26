@@ -1,0 +1,7 @@
+# ignore all binary output
+server
+*.o
+
+# ignore Synchronization.cpp/h
+Synchronization.cpp
+Synchronization.h

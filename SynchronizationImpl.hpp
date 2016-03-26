@@ -4,8 +4,8 @@
  * Interface implementation for Inexor/Tree/Synchronization
  */
 
-#ifndef SYNCI_HPP_
-#define SYNCI_HPP_
+#ifndef SYNCHRONIZATIONIMPL_HPP_
+#define SYNCHRONIZATIONIMPL_HPP_
 
 #include <string>
 #include <Ice/Ice.h>
@@ -14,7 +14,7 @@
 namespace inexor {
 namespace tree {
 
-class SyncI: public Synchronization {
+class SynchronizationImpl: public Synchronization {
 public:
 	virtual void printString(const std::string& s, const Ice::Current&);
 };

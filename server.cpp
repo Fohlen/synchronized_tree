@@ -1,4 +1,4 @@
-#include "SyncI.hpp"
+#include "SynchronizationImpl.hpp"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
         ic = Ice::initialize(argc, argv);
         Ice::ObjectAdapterPtr adapter =
             ic->createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -p 10000");
-        Ice::ObjectPtr object = new inexor::tree::SyncI;
+        Ice::ObjectPtr object = new inexor::tree::SynchronizationImpl;
         adapter->add(object, ic->stringToIdentity("SimplePrinter"));
         adapter->activate();
         ic->waitForShutdown();

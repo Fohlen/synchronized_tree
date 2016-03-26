@@ -5,12 +5,12 @@
  *      Author: fohlen
  */
 
-#include "SyncI.hpp"
+#include "SynchronizationImpl.hpp"
 
 namespace inexor {
 namespace tree {
 
-void SyncI::printString(const std::string& s, const Ice::Current&)
+void SynchronizationImpl::printString(const std::string& s, const Ice::Current&)
 {
     std::cout << s << std::endl;
 }

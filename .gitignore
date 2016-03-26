@@ -1,6 +1,7 @@
 # ignore all binary output
 server
 *.o
+node/node_modules*
 
 # ignore Synchronization.cpp/h
 Synchronization.cpp

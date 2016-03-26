@@ -21,9 +21,9 @@ using namespace path;
 
 class SynchronizationImpl: public Synchronization {
 public:
-	virtual void SetItem(const Container& item, const Ice::Current&);
-	virtual Container GetItem(const std::string& path, const Ice::Current&);
-	virtual Result QueryPath(const Query& query, const Ice::Current&);
+    virtual void setItem(const Container&, const Ice::Current&);
+    virtual Container getItem(const std::string&, const Ice::Current&);
+    virtual Result QueryPath(const QueryPtr& query, const Ice::Current&);
 };
 
 } /* namespace tree */

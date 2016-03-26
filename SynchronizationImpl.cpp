@@ -1,8 +1,6 @@
 /*
  * SyncI.cpp
  *
- *  Created on: 26.03.2016
- *      Author: fohlen
  */
 
 #include "SynchronizationImpl.hpp"
@@ -10,9 +8,18 @@
 namespace inexor {
 namespace tree {
 
-void SynchronizationImpl::printString(const std::string& s, const Ice::Current&)
-{
-    std::cout << s << std::endl;
+void SynchronizationImpl::SetItem(const ::inexor::tree::item::Container& item, const Ice::Current&) {
+
+}
+
+Container SynchronizationImpl::GetItem(const std::string& path, const Ice::Current&) {
+	Container c;
+	return c;
+}
+
+Result SynchronizationImpl::QueryPath(const Query& query, const Ice::Current&) {
+	Result r;
+	return r;
 }
 
 } /* namespace tree */

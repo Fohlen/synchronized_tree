@@ -9,9 +9,9 @@ int main(int argc, char* argv[])
     try {
         ic = Ice::initialize(argc, argv);
         Ice::ObjectAdapterPtr adapter =
-            ic->createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -p 10000");
+            ic->createObjectAdapterWithEndpoints("SyncAdapter", "default -p 10000");
         Ice::ObjectPtr object = new inexor::tree::SynchronizationImpl;
-        adapter->add(object, ic->stringToIdentity("SimplePrinter"));
+        adapter->add(object, ic->stringToIdentity("SyncAdapter"));
         adapter->activate();
         ic->waitForShutdown();
     } catch (const Ice::Exception& e) {

@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 #include <Ice/Ice.h>
-//#include "Tree.hpp"
+#include "Tree.hpp"
 #include "Synchronization.h"
 
 namespace inexor {

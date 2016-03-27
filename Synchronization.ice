@@ -12,8 +12,8 @@ module inexor {
 			};
 			
 			exception Error {
-				Type type;
-				ErrorType error;
+				// this is not really usefull; Item item;
+				ErrorType type;
 			};
 		};
 		

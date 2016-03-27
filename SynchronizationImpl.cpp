@@ -17,40 +17,43 @@ void SynchronizationImpl::setItem(const Container& item, const ::Ice::Current& c
 	    	case BoolValue:
 	    		double boolval;
 	    		in->read(boolval);
-	    		//inexor::tree::Tree.put<bool>(item.path, boolval);
+	    		Tree.put(item.path, boolval);
 	    		break;
 	    	case ShortValue:
 	    		short shortval;
 	    		in->read(shortval);
+	    		Tree.put(item.path, shortval);
 	    		break;
 	    	case IntValue:
 	    		int intval;
 	    		in->read(intval);
+	    		Tree.put(item.path, intval);
 	    		break;
 	    	case LongValue:
 	    		long longval;
 	    		in->read(longval);
+	    		Tree.put(item.path, longval);
 	    		break;
 	    	case FloatValue:
 	    		float floatval;
 	    		in->read(floatval);
+	    		Tree.put(item.path, floatval);
 	    		break;
 	    	case DoubleValue:
 	    		double doubleval;
 	    		in->read(doubleval);
+	    		Tree.put(item.path, doubleval);
 	    		break;
 	    	case StringValue:
 	    		std::string stringval;
 	    		in->read(stringval);
+	    		Tree.put(item.path, stringval);
 	    		break;
-	    	/*default:
-	    		throw Ice::UserException;
-	    		break;*/
 	    }
 
-	} catch (const Ice::UserException& ex) {
-		Error* err = new Error;
-		err->type = item.type;
+	} catch (const boost::property_tree::ptree_bad_data& ex) {
+		item::Error* err = new item::Error();
+		err->type = Failed;
 		throw err;
 	}
 }

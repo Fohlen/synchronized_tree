@@ -11,7 +11,7 @@
 
 namespace inexor {
 namespace tree {
-	boost::property_tree::ptree Tree;
+	extern boost::property_tree::ptree Tree;
 }
 }
 

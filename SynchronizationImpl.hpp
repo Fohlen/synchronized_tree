@@ -9,8 +9,8 @@
 
 #include <string>
 #include <vector>
-
 #include <Ice/Ice.h>
+//#include "Tree.hpp"
 #include "Synchronization.h"
 
 namespace inexor {
@@ -21,9 +21,9 @@ using namespace path;
 
 class SynchronizationImpl: public Synchronization {
 public:
-    virtual void setItem(const Container&, const Ice::Current&);
-    virtual Container getItem(const std::string&, const Ice::Current&);
-    virtual Result QueryPath(const QueryPtr& query, const Ice::Current&);
+    virtual void setItem(const Container& item, const Ice::Current& c);
+    virtual Container getItem(const std::string& path, const Ice::Current& c);
+    virtual Result QueryPath(const QueryPtr& query, const Ice::Current& c);
 };
 
 } /* namespace tree */

@@ -2,6 +2,10 @@
 server
 *.o
 node/node_modules*
+# eclipse specific stuff
+.project
+.settings
+.cproject
 
 # ignore Synchronization.cpp/h
 Synchronization.cpp

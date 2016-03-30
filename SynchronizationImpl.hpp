@@ -9,6 +9,7 @@
 
 #include <string>
 #include <vector>
+#include <typeinfo>
 #include <Ice/Ice.h>
 #include "Tree.hpp"
 #include "Synchronization.h"
@@ -21,9 +22,9 @@ using namespace path;
 
 class SynchronizationImpl: public Synchronization {
 public:
-    virtual void setItem(const Container& item, const Ice::Current& c);
-    virtual Container getItem(const std::string& path, const Ice::Current& c);
-    virtual Result QueryPath(const QueryPtr& query, const Ice::Current& c);
+    virtual void setItem(const Container& item, const Ice::Current& current);
+    virtual Container getItem(const std::string& path, const Ice::Current& current);
+    virtual Result QueryPath(const QueryPtr& query, const Ice::Current& current);
 };
 
 } /* namespace tree */

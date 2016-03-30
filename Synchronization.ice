@@ -1,8 +1,15 @@
 module inexor {
 	module tree {
 		module item {
+			/*
+			 * @ErrorType
+			 *	Invalid - not found
+			 *	Rejected - insufficient permission, such as in a protected namespace
+			 *	Aborted - this only occurs at a race-condition (internally)
+			 *	Failed - type conversion error
+			 */
+			enum ErrorType { Invalid, Rejected, Aborted, Failed };
 			enum Type { BoolValue, ShortValue, IntValue, LongValue, FloatValue, DoubleValue, StringValue };
-			enum ErrorType { Rejected, Aborted, Failed };
 			sequence<byte> ByteSequence;
 		
 			struct Container {
@@ -37,7 +44,8 @@ module inexor {
 		interface Synchronization {
 			idempotent void setItem(::inexor::tree::item::Container item)
 				throws ::inexor::tree::item::Error;
-        	idempotent ::inexor::tree::item::Container getItem(string path);
+        	idempotent ::inexor::tree::item::Container getItem(string path)
+        		throws ::inexor::tree::item::Error;
         	::inexor::tree::path::Result QueryPath(::inexor::tree::path::Query query);
     	};
 	};

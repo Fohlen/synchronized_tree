@@ -62,13 +62,13 @@ Container SynchronizationImpl::getItem(const ::std::string& path, const ::Ice::C
     Ice::OutputStreamPtr out = Ice::createOutputStream(communicator);
 	Container container;
 
-    boost::property_tree::ptree::assoc_iterator item = Tree.find(path);
-    auto data = item->second;
+    boost::property_tree::ptree::assoc_iterator iterator = Tree.find(path);
+    auto data = iterator->second;
     out->write(data);
     out->finished(container.value);
     // TODO: Unfortanly this is not possible due to compile-time issues?
 
-    if (item != Tree.end()) {
+    if (iterator != Tree.not_found()) {
     	if (typeid(bool) == typeid(data)) {
     		container.type = BoolValue;
     	} else if (typeid(short) == typeid(data)) {

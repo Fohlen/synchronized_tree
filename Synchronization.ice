@@ -3,12 +3,12 @@ module inexor {
 		module item {
 			/*
 			 * @ErrorType
-			 *	Invalid - not found
-			 *	Rejected - insufficient permission, such as in a protected namespace
-			 *	Aborted - this only occurs at a race-condition (internally)
-			 *	Failed - type conversion error
+			 *	NonFound - not found
+			 *	Permission - insufficient permission, such as in a protected namespace
+			 *	Condition - this only occurs at a race-condition (internally)
+			 *	Conversion - type conversion error
 			 */
-			enum ErrorType { Invalid, Rejected, Aborted, Failed };
+			enum ErrorType { NonFound, Permission, Condition, Conversion };
 			enum Type { BoolValue, ShortValue, IntValue, LongValue, FloatValue, DoubleValue, StringValue };
 			sequence<byte> ByteSequence;
 		
